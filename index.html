@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Login Siswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-bg">
+    <div class="profile-pic">
+      <img src="pp.jpeg" alt="Foto Profil">
+    </div>
+    <h2 class="profile-name">Laudyaa</h2>
+    <form class="login-form" id="loginForm" autocomplete="off">
+      <input type="text" placeholder="Username" name="username" id="username" required>
+      <input type="password" placeholder="Password" name="password" id="password" required>
+      <button type="submit">Login</button>
+      <div id="error-msg" style="color:red; margin-top:8px; display:none;">Username atau password salah!</div>
+    </form>
+   
+  </div>
+  <script>
+    
+    const allowedUser = "Laudya";   
+    const allowedPass = "1234";  
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let u = document.getElementById('username').value;
+      let p = document.getElementById('password').value;
+      if(u === allowedUser && p === allowedPass){
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById('error-msg').style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
